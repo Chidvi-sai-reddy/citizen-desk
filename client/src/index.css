@@ -1,0 +1,179 @@
+/* =========================================
+   GLOBAL LIGHT THEME & RESET
+   ========================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* Light Grey/White background for a clean look */
+  background-color: #f4f7f9 !important; 
+  color: #1a1a1a !important; /* Primarily Black text */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   HEADER / NAVBAR (DARK BLUE & WHITE TEXT)
+   ========================================= */
+
+header {
+  /* Solid Dark Blue Header as requested */
+  background-color: #00274d !important; 
+  border-bottom: 3px solid #ff9933 !important; /* Saffron accent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation tabs in the header must have White text */
+.nav-tab-hover {
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #ffffff !important; /* Forced White text for Header */
+  transition: all 0.3s ease;
+}
+
+.nav-tab-hover:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ff9933 !important; /* Saffron highlight */
+  transform: translateY(-2px);
+}
+
+/* Header link underline */
+.nav-tab-hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background-color: #ff9933 !important;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-tab-hover:hover::after {
+  width: 65%;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn-primary {
+  background-color: #00274d !important;
+  border-color: #00274d !important;
+  color: #ffffff !important;
+}
+
+.btn-hover-effect {
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+}
+
+.btn-hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 39, 77, 0.2);
+}
+
+/* =========================================
+   SECTIONS & JURISDICTIONS (LIGHT THEME)
+   ========================================= */
+
+section {
+  /* Light background for the body sections */
+  background-color: #ffffff !important; 
+}
+
+/* Department Cards - White background with Navy border on hover */
+.dept-showcase-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.dept-showcase-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 35px rgba(0, 39, 77, 0.1) !important;
+  border-color: #00274d !important;
+}
+
+.dept-showcase-card h5, 
+.dept-showcase-card h6 {
+  color: #00274d !important; /* Navy text for headings on white */
+}
+
+/* =========================================
+   PROCESS STEPS
+   ========================================= */
+
+.bg-light.p-5.rounded-4 {
+  background-color: #f8fafc !important; /* Soft light blue/grey */
+  color: #1a1a1a !important;
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.3s ease;
+}
+
+.bg-light.p-5.rounded-4:hover {
+  transform: translateY(-5px);
+  background-color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   TEXT COLORS (BLACK & NAVY)
+   ========================================= */
+
+h1, h2, h3, h4 {
+  color: #00274d !important; /* Deep Navy for headings */
+  font-weight: 800;
+}
+
+p, small, span, label {
+  color: #334155 !important; /* Dark Slate for readability */
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* =========================================
+   FOOTER (DARK BLUE)
+   ========================================= */
+
+footer {
+  background-color: #001a33 !important; 
+  color: #ffffff !important;
+  border-top: 5px solid #ff9933;
+}
+
+footer h5, footer h6, footer p, footer span, footer a {
+  color: #ffffff !important;
+}
+
+footer a:hover {
+  color: #ff9933 !important;
+  text-decoration: none;
+}
+
+/* =========================================
+   MODALS
+   ========================================= */
+
+.modal-box {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border-radius: 24px;
+  border: none;
+}
+
+.modal-overlay {
+  background: rgba(0, 13, 26, 0.8) !important;
+  backdrop-filter: blur(5px);
+}
+

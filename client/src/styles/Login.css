@@ -1,0 +1,112 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+/*
+  login-page is kept minimal because
+  the modal already controls layout & centering
+*/
+.login-page {
+  width: 100%;
+}
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+/* =========================
+   LOGIN CONTAINER
+   ========================= */
+.login-container {
+  position: relative;
+  background-color: #ffffff;
+  width: 360px;
+  padding: 34px 25px 28px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* =========================
+   CLOSE BUTTON (FOOTER STYLE)
+   ========================= */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  color: #ffffff;                 /* WHITE like footer icons */
+  transition: all 0.25s ease;
+}
+
+.close-btn:hover {
+  color: #ff9933;                 /* SAME orange as footer hover */
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+.login-container h2 {
+  margin-bottom: 8px;
+  color: #0b3c5d;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   INPUT FIELDS
+   ========================= */
+.login-container input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.login-container input:focus {
+  border-color: #0b3c5d;
+  box-shadow: 0 0 5px rgba(11, 60, 93, 0.4);
+}
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0b3c5d;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: #1c5a9a;
+}
+
+/* =========================
+   ERROR MESSAGE
+   ========================= */
+.error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: 8px;
+  font-weight: 500;
+}

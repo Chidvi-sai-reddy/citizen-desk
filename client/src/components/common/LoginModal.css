@@ -1,0 +1,18 @@
+.login-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-modal-box {
+  background: transparent;
+  border-radius: none;
+  padding: 0;              /* 🔥 important */
+  z-index: -3;
+  width: 100%;
+  max-width: 420px;
+}

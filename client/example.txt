@@ -1,0 +1,10 @@
+git init   -- to initialize into git repository --
+git add . / git add <file name>  -- to add files into git staging area --
+git commit -m "message" -- to add into git working repository --
+git push -u origin main  -- to push into main branch --
+git checkout -b "subBranchName"  -- to create subBranch ---
+git push -u origin subBranchName  -- to push into subBranch (telling to git push to which branch)
+git checkout <existing branch name / main>  -- to change branch --
+git status -- to check git status like tracking files --
+git pull / git pull -u origin main  -- to getting changes done by other branches to our code editor -- 
+

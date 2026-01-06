@@ -1,0 +1,24 @@
+/* App.css – reset Vite demo styles */
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* css for footer  */
+.footer a{
+  color:#fff !important;
+  text-decoration:none;
+}
+
+.footer a .footer-icon{
+  color:#fff !important;
+  font-size:1.2rem;
+  transition:all .25s ease;
+}
+
+.footer a:hover .footer-icon{
+  color:#ff9933 !important;
+  transform:translateY(-2px);
+}
+
