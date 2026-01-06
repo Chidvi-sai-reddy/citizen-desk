@@ -17,17 +17,37 @@ exports.getComplaintsForOfficer = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+// controllers/officerComplaintController.js
+
 
 exports.updateComplaintStatus = async (req, res) => {
   const { id } = req.params;
-  const { status, reason } = req.body; // Destructure reason from body
+  const { status, reason, assignedWorker } = req.body;
 
   try {
     const updateData = { status };
-    if (reason) updateData.reason = reason; // Add reason to update object if provided
 
-    await Complaint.findByIdAndUpdate(id, updateData);
-    res.json({ success: true });
+    // Handle Rejection
+    if (status === "Rejected") {
+      updateData.reason = reason;
+    }
+
+    // Handle Acceptance + Worker Assignment
+    if (status === "Accepted" && assignedWorker) {
+      updateData.assignedWorker = {
+        name: assignedWorker.name,
+        phone: assignedWorker.phone,
+        dept: assignedWorker.dept
+      };
+    }
+
+    const updated = await Complaint.findByIdAndUpdate(id, updateData, { new: true });
+    
+    if (!updated) {
+      return res.status(404).json({ success: false, message: "Complaint not found" });
+    }
+
+    res.json({ success: true, data: updated });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

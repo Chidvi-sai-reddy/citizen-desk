@@ -1,28 +1,30 @@
 const Feedback = require("../models/Feedback");
 
-// Citizens: Submit new feedback
-exports.submitFeedback = async (req, res) => {
+const submitFeedback = async (req, res) => {
   try {
     const { email, feedback } = req.body;
+
     if (!email || !feedback) {
-      return res.status(400).json({ success: false, message: "Email and feedback are required" });
+      return res.status(400).json({ success: false, message: "Required fields missing" });
     }
 
-    const newFeedback = new Feedback({ email, feedback });
-    await newFeedback.save();
-
-    res.status(201).json({ success: true, message: "Feedback submitted successfully" });
+    await new Feedback({ email, feedback }).save();
+    res.status(201).json({ success: true });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-// Officers: Retrieve all feedback for the dashboard
-exports.getAllFeedback = async (req, res) => {
+const getAllFeedback = async (req, res) => {
   try {
-    const feedbacks = await Feedback.find().sort({ createdAt: -1 });
-    res.json(feedbacks);
+    const data = await Feedback.find().sort({ createdAt: -1 });
+    res.json(data);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
+};
+
+module.exports = {
+  submitFeedback,
+  getAllFeedback,
 };

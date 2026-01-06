@@ -6,12 +6,13 @@ const imagekit = new ImageKit({
   urlEndpoint: process.env.IK_URL_ENDPOINT,
 });
 
-// 🔹 In-memory OTP store (dev only)
-const otpCache = {};
-
-// IMAGEKIT AUTH
+// IMAGEKIT AUTH ENDPOINT
 exports.getIKAuth = (req, res) => {
-  const authParams = imagekit.getAuthenticationParameters();
-  res.json(authParams);
+  try {
+    const authParams = imagekit.getAuthenticationParameters();
+    return res.status(200).json(authParams);
+  } catch (error) {
+    console.error("❌ ImageKit Auth Error:", error.message);
+    return res.status(500).json({ message: "ImageKit auth failed" });
+  }
 };
-
